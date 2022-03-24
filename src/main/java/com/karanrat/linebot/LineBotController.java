@@ -97,7 +97,7 @@ public class LineBotController {
         log.info("Got text message from %s : %s", replyToken, text);
 
         switch (text) {
-            case "Profile": {
+            case "profile": {
                 String userId = event.getSource().getUserId();
                 if(userId != null) {
                     lineMessagingClient.getProfile(userId)
@@ -115,9 +115,31 @@ public class LineBotController {
                 }
                 break;
             }
+
+            case "order": {
+                log.info("You have an order! ");
+                this.replyText(replyToken, "สั่งอาหารค้าบบบบ");
+            }
+
+            case "help": {
+                this.reply(replyToken, Arrays.asList(
+                    new TextMessage("ขั้นตอนการใช้ไลน์บอทสั่งอาหาร: "),
+                    new TextMessage("1.)พิมพ์ 'menu' เพื่อดูรายการอาหาร"),
+                    new TextMessage("2.)พิมพ์ 'order'เพื่อสั่งอาหาร")
+                ));
+                
+            }
+
+            case "menu": {
+                this.replyText(replyToken, "หิวข้าวววว");
+            }
+
             default:
-                log.info("Return echo message %s : %s", replyToken, text);
-                this.replyText(replyToken, text);
+                log.info("Return uncommand message %s : %s", replyToken, text);
+                this.replyText(replyToken, "ขออภัย ทางเราไม่ได้มีคำสั่งนั้น");
+                this.replyText(replyToken, "ไลน์บอทของทางร้านจะมีคำสั่งดังนี้: ");
+                this.replyText(replyToken, "พิมพ์ 'order' : เพื่อเข้าสู่ขั้นตอนการสั่งอาหาร");
+                this.replyText(replyToken, "พิมพ์ 'help' : เพื่อดูวิธีใช้งานไลน์บอท");
         }
     }
 
