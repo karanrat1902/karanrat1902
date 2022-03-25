@@ -125,16 +125,18 @@ public class LineBotController {
             case "ขนมหวาน": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage("Menu ขนมหวาน"),
-                    new TextMessage("ชีสเค้ก(D1)\tราคา 25บาท\nสตรอว์เบอร์รีชีสเค้ก(D2)\tราคา 30บาท\nทีรามิสุ(D3)\tราคา 30บาท\nบราวน์ชูการ์โทสต์(D4)\tราคา 30บาท\nเค้กเรดเวลเวท(D5)\tราคา 30บาท\n")
+                    new TextMessage("ชีสเค้ก(D1)\tราคา 39บาท\nสตรอว์เบอร์รีชีสเค้ก(D2)\tราคา 39บาท\nทีรามิสุ(D3)\tราคา 39บาท\nบราวน์ชูการ์โทสต์(D4)\tราคา 39บาท\nเค้กเรดเวลเวท(D5)\tราคา 39บาท\n"),
                 
                 ));
                 
             }
 
+            
+
             case "อาหาร": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage("MEnu อาหาร"),
-                    new TextMessage("ไข่กระทะ(F1)\tราคา 35บาท\nมินิพิซซ่าแฮมชีส(F2)\tราคา 40บาท\nแซนด์วิชไก่กรอบ(F3)\tราคา 30บาท\nสลัดไข่เจียว(F4)\tราคา 30บาท\nสเต๊กหมูพันเบคอน(F5)\tราคา 50บาท\n")
+                    new TextMessage("ไข่กระทะ(F1)\tราคา 40บาท\nมินิพิซซ่าแฮมชีส(F2)\tราคา 59บาท\nแซนด์วิชไก่กรอบ(F3)\tราคา 39บาท\nสลัดไข่เจียว(F4)\tราคา 35บาท\nสเต๊กหมูพันเบคอน(F5)\tราคา 69บาท\n")
 
                 ));
                 
@@ -143,7 +145,7 @@ public class LineBotController {
             case "กาแฟ": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage("Menu กาแฟ"),
-                    new TextMessage("เอสเพรสโซ(C1)\tราคา 35บาท\nอเมริกาโน(C2)\tราคา 35บาท\nลาเต้(C3)\tราคา 35บาท\nคาปูชิโน(C4)\tราคา 35บาท\nมอคค่า(C5)\tราคา 35บาท\n")
+                    new TextMessage("เอสเพรสโซ(C1)\tราคา 45บาท\nอเมริกาโน(C2)\tราคา 45บาท\nลาเต้(C3)\tราคา 45บาท\nคาปูชิโน(C4)\tราคา 45บาท\nมอคค่า(C5)\tราคา 45บาท\n")
                 ));
                 
             }
@@ -151,12 +153,53 @@ public class LineBotController {
             case "ชานม": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage("Menu ชานม"),
-                    new TextMessage("ชานมไต้หวัน(M1)\tราคา 35บาท\nมัทฉะญี่ปุ่น(M2)\tราคา 35บาท\nโกโก้(M3)\tราคา 35บาท\nชาลาวา(M4)\tราคา 35บาท\nชาชีส(M5)\tราคา 35บาท\n")
+                    new TextMessage("ชานมไต้หวัน(M1)\tราคา 40บาท\nมัทฉะญี่ปุ่น(M2)\tราคา 40บาท\nโกโก้(M3)\tราคา 40บาท\nชาลาวา(M4)\tราคา 40บาท\nชาชีส(M5)\tราคา 40บาท\nชาเขียว(M6)\tราคา 40บาท\nชาไทย(M7)\tราคา 40บาท")
                 ));
                 
             }
 
-            
+            case "M1":{
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
+                ));
+            }
+
+            case "M2":{
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
+                ));
+            }
+
+            case "M3":{
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
+                ));
+            }
+
+            case "M4":{
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
+                ));
+            }
+
+            case "M5":{
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
+                ));
+            }
+
+            case "M6":{
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
+                ));
+            }
+
+            case "M7":{
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
+                ));
+            }
+
             case "สวัสดี": {
                 this.replyText(replyToken, "สวัสดีค่ะ รับอะไรดีคะเลือกหมวดหมูตามรูปได้เลยค่ะ");
             }
