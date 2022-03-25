@@ -1,5 +1,6 @@
 package com.karanrat.linebot;
 
+
 import com.google.common.io.ByteStreams;
 import com.linecorp.bot.client.LineMessagingClient;
 import com.linecorp.bot.client.MessageContentResponse;
@@ -121,18 +122,50 @@ public class LineBotController {
                 this.replyText(replyToken, "สั่งอาหารค้าบบบบ");
             }
 
-            case "help": {
+            case "ขนม": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage("ขั้นตอนการใช้ไลน์บอทสั่งอาหาร: "),
-                    new TextMessage("1.)พิมพ์ 'menu' เพื่อดูรายการอาหาร"),
-                    new TextMessage("2.)พิมพ์ 'order'เพื่อสั่งอาหาร")
+                    new TextMessage("ชีสเค้ก"),
+                    new TextMessage("สตรอว์เบอร์รีชีสเค้ก"),
+                    new TextMessage("ทีรามิสุ"),
+                    new TextMessage("บราวน์ชูการ์โทสต์"),
+                    new TextMessage("เค้กเรดเวลเวท")
                 ));
                 
             }
 
-            case "menu": {
-                this.replyText(replyToken, "หิวข้าวววว");
+            case "อาหาร": {
+                this.reply(replyToken, Arrays.asList(
+                    new TextMessage("ไข่กระทะ"),
+                    new TextMessage("มินิพิซซ่าแฮมชีส"),
+                    new TextMessage("แซนด์วิชไก่กรอบ"),
+                    new TextMessage("สลัดไข่เจียว"),
+                    new TextMessage("สเต๊กหมูพันเบคอน")
+                ));
+                
             }
+
+            case "กาแฟ": {
+                this.reply(replyToken, Arrays.asList(
+                    new TextMessage("เอสเพรสโซ"),
+                    new TextMessage("อเมริกาโน"),
+                    new TextMessage("ลาเต้"),
+                    new TextMessage("คาปูชิโน"),
+                    new TextMessage("มอคค่า")
+                ));
+                
+            }
+
+            case "ชานม": {
+                this.reply(replyToken, Arrays.asList(
+                    new TextMessage("ชานมไต้หวัน"),
+                    new TextMessage("มัทฉะญี่ปุ่น"),
+                    new TextMessage("โกโก้"),
+                    new TextMessage("ชาลาวา"),
+                    new TextMessage("ชาชีส")
+                ));
+                
+            }
+
 
             default:
                 log.info("Return uncommand message %s : %s", replyToken, text);
