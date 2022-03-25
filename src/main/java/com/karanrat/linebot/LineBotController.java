@@ -125,7 +125,7 @@ public class LineBotController {
             case "ขนมหวาน": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage("Menu ขนมหวาน"),
-                    new TextMessage("ชีสเค้ก(D1)\tราคา 39บาท\nสตรอว์เบอร์รีชีสเค้ก(D2)\tราคา 39บาท\nทีรามิสุ(D3)\tราคา 39บาท\nบราวน์ชูการ์โทสต์(D4)\tราคา 39บาท\nเค้กเรดเวลเวท(D5)\tราคา 39บาท\n"),
+                    new TextMessage("ชีสเค้ก(D1)\tราคา 39บาท\nสตรอว์เบอร์รีชีสเค้ก(D2)\tราคา 39บาท\nทีรามิสุ(D3)\tราคา 39บาท\nบราวน์ชูการ์โทสต์(D4)\tราคา 39บาท\nเค้กเรดเวลเวท(D5)\tราคา 39บาท\n")
                 
                 ));
                 
@@ -199,6 +199,7 @@ public class LineBotController {
                     new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
                 ));
             }
+
 
             case "สวัสดี": {
                 this.replyText(replyToken, "สวัสดีค่ะ รับอะไรดีคะเลือกหมวดหมูตามรูปได้เลยค่ะ");
