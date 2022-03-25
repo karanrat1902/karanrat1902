@@ -1,6 +1,5 @@
 package com.karanrat.linebot;
 
-
 import com.google.common.io.ByteStreams;
 import com.linecorp.bot.client.LineMessagingClient;
 import com.linecorp.bot.client.MessageContentResponse;
@@ -117,55 +116,50 @@ public class LineBotController {
                 break;
             }
 
+
             case "order": {
                 log.info("You have an order! ");
                 this.replyText(replyToken, "สั่งอาหารค้าบบบบ");
             }
 
-            case "ขนม": {
+            case "ขนมหวาน": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage("ชีสเค้ก"),
-                    new TextMessage("สตรอว์เบอร์รีชีสเค้ก"),
-                    new TextMessage("ทีรามิสุ"),
-                    new TextMessage("บราวน์ชูการ์โทสต์"),
-                    new TextMessage("เค้กเรดเวลเวท")
+                    new TextMessage("Menu ขนมหวาน"),
+                    new TextMessage("ชีสเค้ก(D1)\tราคา 25บาท\nสตรอว์เบอร์รีชีสเค้ก(D2)\tราคา 30บาท\nทีรามิสุ(D3)\tราคา 30บาท\nบราวน์ชูการ์โทสต์(D4)\tราคา 30บาท\nเค้กเรดเวลเวท(D5)\tราคา 30บาท\n")
+                
                 ));
                 
             }
 
             case "อาหาร": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage("ไข่กระทะ"),
-                    new TextMessage("มินิพิซซ่าแฮมชีส"),
-                    new TextMessage("แซนด์วิชไก่กรอบ"),
-                    new TextMessage("สลัดไข่เจียว"),
-                    new TextMessage("สเต๊กหมูพันเบคอน")
+                    new TextMessage("MEnu อาหาร"),
+                    new TextMessage("ไข่กระทะ(F1)\tราคา 35บาท\nมินิพิซซ่าแฮมชีส(F2)\tราคา 40บาท\nแซนด์วิชไก่กรอบ(F3)\tราคา 30บาท\nสลัดไข่เจียว(F4)\tราคา 30บาท\nสเต๊กหมูพันเบคอน(F5)\tราคา 50บาท\n")
+
                 ));
                 
             }
 
             case "กาแฟ": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage("เอสเพรสโซ"),
-                    new TextMessage("อเมริกาโน"),
-                    new TextMessage("ลาเต้"),
-                    new TextMessage("คาปูชิโน"),
-                    new TextMessage("มอคค่า")
+                    new TextMessage("Menu กาแฟ"),
+                    new TextMessage("เอสเพรสโซ(C1)\tราคา 35บาท\nอเมริกาโน(C2)\tราคา 35บาท\nลาเต้(C3)\tราคา 35บาท\nคาปูชิโน(C4)\tราคา 35บาท\nมอคค่า(C5)\tราคา 35บาท\n")
                 ));
                 
             }
 
             case "ชานม": {
                 this.reply(replyToken, Arrays.asList(
-                    new TextMessage("ชานมไต้หวัน"),
-                    new TextMessage("มัทฉะญี่ปุ่น"),
-                    new TextMessage("โกโก้"),
-                    new TextMessage("ชาลาวา"),
-                    new TextMessage("ชาชีส")
+                    new TextMessage("Menu ชานม"),
+                    new TextMessage("ชานมไต้หวัน(M1)\tราคา 35บาท\nมัทฉะญี่ปุ่น(M2)\tราคา 35บาท\nโกโก้(M3)\tราคา 35บาท\nชาลาวา(M4)\tราคา 35บาท\nชาชีส(M5)\tราคา 35บาท\n")
                 ));
                 
             }
 
+            
+            case "สวัสดี": {
+                this.replyText(replyToken, "สวัสดีค่ะ รับอะไรดีคะเลือกหมวดหมูตามรูปได้เลยค่ะ");
+            }
 
             default:
                 log.info("Return uncommand message %s : %s", replyToken, text);
