@@ -205,7 +205,7 @@ public class LineBotController {
             }
 
             case "สั่ง F1":{
-                ticket = +1;
+                ticket = ticket+1;
                 this.reply(replyToken,Arrays.asList(
                     new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้าไข่กระทะ ธรรมดา\n\nรายการ 59 บาท\n\nกรุณารอคิวสักครู่นะครับ")
                 ));
@@ -213,7 +213,7 @@ public class LineBotController {
             }
 
             case "สั่ง F1 พิเศษ":{
-                ticket = +1;
+                ticket = ticket+1;
                 this.reply(replyToken,Arrays.asList(
                     new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้าไข่กระทะ พิเศษ\n\nรายการ 64 บาท\n\nกรุณารอคิวสักครู่นะครับ")
                 ));
