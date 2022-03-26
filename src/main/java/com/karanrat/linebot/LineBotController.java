@@ -36,6 +36,7 @@ import java.util.concurrent.ExecutionException;
 @Slf4j
 @LineMessageHandler
 public class LineBotController {
+    
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -92,6 +93,7 @@ public class LineBotController {
     }
 
     private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
+        int ticket = 0;
         String text = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text);
@@ -142,7 +144,6 @@ public class LineBotController {
               
             }
             
-            int ticket = 0;
             case "กาแฟ": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage("Menu กาแฟ"),
@@ -200,10 +201,18 @@ public class LineBotController {
                     new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
                 ));
             }
+
             case "สั่ง F1":{
                 ticket = +1;
                 this.reply(replyToken,Arrays.asList(
-                    new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้ ไข่กระทะ ธรรมดา\nกรุณารอคิวสักครู่นะครับ")
+                    new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้าไข่กระทะ ธรรมดา\n\nรายการ 59 บาท\n\nกรุณารอคิวสักครู่นะครับ")
+                ));
+            }
+
+            case "สั่ง F1 พิเศษ":{
+                ticket = +1;
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้าไข่กระทะ พิเศษ\n\nรายการ 64 บาท\n\nกรุณารอคิวสักครู่นะครับ")
                 ));
             }
 
