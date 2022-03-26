@@ -120,7 +120,7 @@ public class LineBotController {
                 break;
             }
 
-
+            
             case "order": {
                 log.info("You have an order! ");
                 this.replyText(replyToken, "สั่งอาหารค้าบบบบ");
@@ -1127,6 +1127,10 @@ public class LineBotController {
                 break;
             }
             case "สวัสดี": {
+                this.replyText(replyToken, "สวัสดีค่ะ รับอะไรดีคะเลือกหมวดหมูตามรูปได้เลยค่ะ");
+            }
+
+            case "โอเค": {
                 this.replyText(replyToken, "สวัสดีค่ะ รับอะไรดีคะเลือกหมวดหมูตามรูปได้เลยค่ะ");
             }
 
