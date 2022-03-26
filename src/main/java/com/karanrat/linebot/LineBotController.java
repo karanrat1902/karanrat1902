@@ -202,24 +202,43 @@ public class LineBotController {
                 this.reply(replyToken,Arrays.asList(
                     new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
                 ));
+                break;
             }
 
-            case "สั่ง F1":{
+            case "สั่ง f1":{
                 ticket = ticket+1;
+                
                 this.reply(replyToken,Arrays.asList(
-                    new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้าไข่กระทะ ธรรมดา\n\nรายการ 59 บาท\n\nกรุณารอคิวสักครู่นะครับ")
+                    new TextMessage("\nคิวของคุณคือ"+ticket+"\nรายการสินค้าไข่กระทะ ธรรมดา\n\nรายการ 59 บาท\n\nกรุณารอคิวสักครู่นะครับ")
                 ));
                 break;
             }
 
-            case "สั่ง F1 พิเศษ":{
+            case "สั่ง f1 พิเศษ":{
                 ticket = ticket+1;
                 this.reply(replyToken,Arrays.asList(
-                    new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้าไข่กระทะ พิเศษ\n\nรายการ 64 บาท\n\nกรุณารอคิวสักครู่นะครับ")
+                    new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้า ไข่กระทะ พิเศษ\n\nรายการ 64 บาท\n\nกรุณารอคิวสักครู่นะครับ")
                 ));
                 break;
             }
+            case "สั่ง f1 พิเศษ + ไข่ดาว": {
+                String userId = event.getSource().getUserId();
+                ticket = ticket+1;
+                if(userId != null) {
+                    lineMessagingClient.getProfile(userId)
+                            .whenComplete((profile, throwable) -> {
+                                if(throwable != null) {
+                                    this.replyText(replyToken, throwable.getMessage());
+                                    return;
+                                }
+                                this.reply(replyToken, Arrays.asList(
+                                        new TextMessage(profile.getDisplayName()+"\nคิวของคุณคือ"+ticket+"\nรายการสินค้า ไข่กระทะ พิเศษ\n\nรายการ 69 บาท\n\nกรุณารอคิวสักครู่นะครับ")
 
+                                ));
+                            });
+                }
+                break;
+            }
 
             case "สวัสดี": {
                 this.replyText(replyToken, "สวัสดีค่ะ รับอะไรดีคะเลือกหมวดหมูตามรูปได้เลยค่ะ");
