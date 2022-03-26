@@ -130,18 +130,19 @@ public class LineBotController {
                 ));
                 
             }
-
+            
             
 
             case "อาหาร": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage("MEnu อาหาร"),
-                    new TextMessage("ไข่กระทะ(F1)\tราคา 40บาท\nมินิพิซซ่าแฮมชีส(F2)\tราคา 59บาท\nแซนด์วิชไก่กรอบ(F3)\tราคา 39บาท\nสลัดไข่เจียว(F4)\tราคา 35บาท\nสเต๊กหมูพันเบคอน(F5)\tราคา 69บาท\n")
+                    new TextMessage("ไข่กระทะ(F1)\tราคา 40บาท\nมินิพิซซ่าแฮมชีส(F2)\tราคา 59บาท\nแซนด์วิชไก่กรอบ(F3)\tราคา 39บาท\nสลัดไข่เจียว(F4)\tราคา 35บาท\nสเต๊กหมูพันเบคอน(F5)\tราคา 69บาท\nพิเสษ + 10 บาท\n+ไข่ด่าว + 5\nไข่เจียว + 10 บาท")
 
                 ));
-                
+              
             }
-
+            
+            int ticket = 0;
             case "กาแฟ": {
                 this.reply(replyToken, Arrays.asList(
                     new TextMessage("Menu กาแฟ"),
@@ -197,6 +198,12 @@ public class LineBotController {
             case "M7":{
                 this.reply(replyToken,Arrays.asList(
                     new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
+                ));
+            }
+            case "สั่ง F1":{
+                ticket = +1;
+                this.reply(replyToken,Arrays.asList(
+                    new TextMessage("คิวของคุณคือ"+ticket+"\nรายการสินค้ ไข่กระทะ ธรรมดา\nกรุณารอคิวสักครู่นะครับ")
                 ));
             }
 
