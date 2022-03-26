@@ -35,8 +35,9 @@ import java.util.concurrent.ExecutionException;
 
 @Slf4j
 @LineMessageHandler
+
 public class LineBotController {
-    int ticket = 0;
+    int ticket ;
     
     @Autowired
     private LineMessagingClient lineMessagingClient;
