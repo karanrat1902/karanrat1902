@@ -166,62 +166,44 @@ public class LineBotController {
                 this.reply(replyToken,Arrays.asList(
                     new TextMessage("หวานน้อย(1)\nหวานมาก(2)\nหวานปกติ(3)")
                 ));
-                switch (text) {
-                    case "1": {
-                        String userId = event.getSource().getUserId();
-                        ticket = ticket+1;
-                        if(userId != null) {
-                            lineMessagingClient.getProfile(userId)
-                                    .whenComplete((profile, throwable) -> {
-                                        if(throwable != null) {
-                                            this.replyText(replyToken, throwable.getMessage());
-                                            return;
-                                        }
-                                        this.reply(replyToken, Arrays.asList(
-                                                new TextMessage("คุณ "+profile.getDisplayName()+"\nคิวของคุณคือ"+ticket+"\nรายการสินค้า ชาใต้หวัน หวานน้อย\n\nรายการ 40 บาท\n\nกรุณารอฟังการเรียกอาหารจะเสร็จภายใน 15 นาที")
-        
-                                        ));
-                                    });
-                        }
-                        break;
+                if (text == "1"){
+                    String userId = event.getSource().getUserId();
+                    ticket = ticket+1;
+                    if(userId != null) {
+                        lineMessagingClient.getProfile(userId)
+                                .whenComplete((profile, throwable) -> {
+                                    if(throwable != null) {
+                                        this.replyText(replyToken, throwable.getMessage());
+                                        return;
+                                    }
+                                    this.reply(replyToken, Arrays.asList(
+                                            new TextMessage("คุณ "+profile.getDisplayName()+"\nคิวของคุณคือ"+ticket+"\nรายการสินค้า ชาใต้หวัน หวานน้อย \n\nรายการ 40 บาท\n\nกรุณารอฟังการเรียกอาหารจะเสร็จภายใน 15 นาที")
+
+                                    ));
+                                });
                     }
-                    case "2": {
-                        String userId = event.getSource().getUserId();
-                        ticket = ticket+1;
-                        if(userId != null) {
-                            lineMessagingClient.getProfile(userId)
-                                    .whenComplete((profile, throwable) -> {
-                                        if(throwable != null) {
-                                            this.replyText(replyToken, throwable.getMessage());
-                                            return;
-                                        }
-                                        this.reply(replyToken, Arrays.asList(
-                                                new TextMessage("คุณ "+profile.getDisplayName()+"\nคิวของคุณคือ"+ticket+"\nรายการสินค้า ชาใต้หวัน หวานปกติ\n\nรายการ 40 บาท\n\nกรุณารอฟังการเรียกอาหารจะเสร็จภายใน 15 นาที")
-        
-                                        ));
-                                    });
-                        }
-                        break;
+                    break;
                     }
-                    case "3": {
-                        String userId = event.getSource().getUserId();
-                        ticket = ticket+1;
-                        if(userId != null) {
-                            lineMessagingClient.getProfile(userId)
-                                    .whenComplete((profile, throwable) -> {
-                                        if(throwable != null) {
-                                            this.replyText(replyToken, throwable.getMessage());
-                                            return;
-                                        }
-                                        this.reply(replyToken, Arrays.asList(
-                                                new TextMessage("คุณ "+profile.getDisplayName()+"\nคิวของคุณคือ"+ticket+"\nรายการสินค้า ชาใต้หวัน หวานมาก\n\nรายการ 40 บาท\n\nกรุณารอฟังการเรียกอาหารจะเสร็จภายใน 15 นาที")
-        
-                                        ));
-                                    });
-                        }
-                        break;
+                if (text == "2"){
+                    String userId = event.getSource().getUserId();
+                    ticket = ticket+1;
+                    if(userId != null) {
+                        lineMessagingClient.getProfile(userId)
+                                .whenComplete((profile, throwable) -> {
+                                    if(throwable != null) {
+                                        this.replyText(replyToken, throwable.getMessage());
+                                        return;
+                                    }
+                                    this.reply(replyToken, Arrays.asList(
+                                            new TextMessage("คุณ "+profile.getDisplayName()+"\nคิวของคุณคือ"+ticket+"\nรายการสินค้า ชาใต้หวัน หวานปกติ \n\nรายการ 40 บาท\n\nกรุณารอฟังการเรียกอาหารจะเสร็จภายใน 15 นาที")
+    
+                                    ));
+                                });
                     }
-                }
+                    break;
+                    }
+                    
+                                
             }
 
             case "M2":{
