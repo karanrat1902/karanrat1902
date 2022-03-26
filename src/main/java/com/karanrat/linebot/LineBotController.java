@@ -91,9 +91,9 @@ public class LineBotController {
         }
 
     }
-
+    int ticket = 0;
     private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
-        int ticket = 0;
+        
         String text = content.getText();
 
         log.info("Got text message from %s : %s", replyToken, text);
